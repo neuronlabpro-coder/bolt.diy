@@ -79,7 +79,7 @@ services:
     command: pnpm run dev --host 0.0.0.0
     profiles: ['development', 'default']
 
-  app-prebuild:
+  app:
     build:
       context: .
     ports:
