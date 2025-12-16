@@ -61,6 +61,9 @@ ENV WRANGLER_SEND_METRICS=false \
 RUN apt-get update && apt-get install -y --no-install-recommends curl \
   && rm -rf /var/lib/apt/lists/*
 
+# Install wrangler CLI
+RUN npm install -g wrangler
+
 # Copy built files and scripts
 COPY --from=prod-deps /app/build /app/build
 COPY --from=prod-deps /app/node_modules /app/node_modules
